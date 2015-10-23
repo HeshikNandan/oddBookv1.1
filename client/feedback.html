@@ -1,8 +1,12 @@
 <template name="feedback">
-	<form style="margin: 8px">
-		<h2>Content</h2>
-		<input type="text" id="content" name="content">
-		<input type="checkbox" id="anonymous" name="anonymous" checked> post anonymously
-		<button type="button" id="submit-feedback">Submit</button>
+	<form role="form" style="margin: 40px">
+  		<div class="form-group">
+	    	<label>New Feedback</label>
+	    	<input type="text" class="form-control" id="content">
+  		</div>
+	  	<div class="checkbox">
+	    	<label><input type="checkbox" id="anonymous" checked> post anonymously</label>
+	  	</div>
+  		<button type="submit" id="submit-feedback" class="btn btn-default">Submit</button>
 	</form>
 </template>
