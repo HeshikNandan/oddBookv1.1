@@ -3,6 +3,9 @@ Template.feedback.events({
 		event.preventDefault();
 		console.log("I'm submitting a feedback");
 		var content = $("#content").val();
+		if (!content) {
+			return;
+		}
 		var anonymous = $("#anonymous").is(":checked");
 		Feedback.insert({
 			'content': content,
