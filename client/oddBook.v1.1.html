@@ -1,0 +1,42 @@
+<head>
+  <title>oddBook.v1.1</title>
+</head>
+
+<body>
+  <h1>Welcome to OddBook!</h1> {{> loginButtons}}
+  <div class="show-user">
+      {{> showUser}}
+  </div>
+  {{> createUser}}
+  {{> users}}
+</body>
+<template name="showUser">
+
+</template>
+<template name="createUser">
+  <form class="user">
+        <input type="text" id="email" name="email" placeholder="Whats your Email?" />
+        <input type="text" id="occupation" name="occupation" placeholder="What do you do?" />
+        <input type="date" id="birthday" name="birthday" placeholder="Whats your Birthdate?" />
+        <input type="text" id="name" name="name" placeholder="Whats your Name?" />
+        <input type="text" id="location" name="location" placeholder="Where do you live?" />
+        <input type="text" id="relationshipstatus" name="relationshipstatus" placeholder="Are you Single?" />
+        <input type="text" id="status" name="status" placeholder="What are you doing now?" />
+        <input type="text" id="hobbies" name="hobbies" placeholder="What do you like to do other than Oddling?" />
+        <select name="bossid" id="bossid" >
+          {{#each user}}
+            <option value="{{email}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <!--{{> quickForm id="types1" schema=typesSchema1}}-->
+        <button type="button" class="submit-user">Submit</button>
+      </form>
+</template>
+<template name="users">
+  <ol>
+      {{#each user}}
+      <span>{{email}}</span><br>
+      <span>{{birthday}}</span>
+      {{/each}}
+  </ol>
+</template>
