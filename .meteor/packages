@@ -25,4 +25,5 @@ aldeed:autoform-bs-datepicker
 accounts-google
 service-configuration
 accounts-ui
+rafaelhdr:google-charts
 iron:router
