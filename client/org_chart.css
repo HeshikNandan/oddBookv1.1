@@ -27,3 +27,7 @@
 #chart .google-visualization-orgchart-linenode {
   border: none;
 }*/
+
+#network {
+	height: 400px;
+}

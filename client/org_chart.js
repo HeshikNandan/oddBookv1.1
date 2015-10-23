@@ -43,6 +43,65 @@ Template.orgChart.onRendered( function() {
       chart.draw(data, {allowHtml:true, size: "large", nodeClass:'odchart-user', selectedNodeClass: 'selected-odchart-user'});
     }
   });
+
+  var users = User.find();
+  var userSort = [];
+  for(var i in users){
+    var u = new u();
+    u.id = users[i]._id;
+    u.label = users[i].name;
+    userSort.push(u);
+  }
+
+  function u(){
+    this.id="";
+    this.label="";
+  }
+
+  var nodes = new vis.DataSet(
+      userSort
+      // {id: 1, label: 'Almeric'},
+      // {id: 2, label: 'Arvin'},
+      // {id: 3, label: 'Shee Mun'},
+      // {id: 4, label: 'Laura'},
+      // {id: 5, label: 'Alan'}
+    );
+
+    // create an array with edges
+    var edges = new vis.DataSet([
+        // {from: 2, to: 1},
+        // {from: 3, to: 1},
+        // {from: 4, to: 1},
+        // {from: 1, to: 5},
+        // {from: 2, to: 5},
+        // {from: 3, to: 5},
+        // {from: 4, to: 5}
+    ]);
+
+    // create a network
+    var container = document.getElementById('network');
+
+    // provide the data in the vis format
+    var data = {
+        nodes: nodes,
+        edges: edges
+    };
+    var options = {
+      autoResize: true,
+      height: '100%',
+      width: '100%',
+      locale: 'en',
+      edges:{
+        arrows: {
+          to:     {enabled: false, scaleFactor:1},
+          middle: {enabled: false, scaleFactor:1},
+          from:   {enabled: false, scaleFactor:1}
+        },
+      }
+    };
+
+    // initialize your network!
+    var network = new vis.Network(container, data, options);
 });
 
 Template.orgChart.events({

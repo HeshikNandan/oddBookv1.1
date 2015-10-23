@@ -27,3 +27,8 @@ service-configuration
 accounts-ui
 iron:router
 miro:preloader
+meteorhacks:npm
+
+
+npm-container
+timheckel:vis
