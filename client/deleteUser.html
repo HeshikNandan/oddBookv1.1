@@ -1,0 +1,17 @@
+<template name="deleteUser">
+<div class="container">
+  <div class="inner-content">
+  <div class="form-group">
+  <label for="exampleInputEmail1">Team</label>
+    <select class="form-control" name="user" id="user" >
+      {{#each user}}
+        <option value={{email}}>{{name}}</option>
+        {{/each}}
+    </select>
+    <button type="button" class="submit-user btn btn-primary blockquote-reverse">
+        Delete This User
+    </button>
+  </div>
+</div>
+</div>
+</template>
