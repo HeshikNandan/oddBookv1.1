@@ -9,4 +9,27 @@
 	  	</div>
   		<button type="submit" id="submit-feedback" class="btn btn-default">Submit</button>
 	</form>
+
+	<ul style="margin:40px">
+		{{#each feedbacks}}
+		  	{{> feedbackRow}}
+		{{/each}}
+	</ul>
+</template>
+
+<template name="feedbackRow">
+	<div style="margin: 10px">
+  		<h4>{{content}}</h4>
+  		<div>
+  			{{#if anonymous}}
+  				<span>posted by anonymous</span>
+  			{{else}}
+  				<span>posted by {{poster}}</span>
+  			{{/if}}
+  			<span><a id="likes" href="#" style="color: blue">likes</a> {{likes.length}}</span>
+  			<span><a id="unlikes" href="#" style="color: blue">unlikes</a> {{unlikes.length}}</span>
+  			<span><a id="comments" href="#" style="color: blue">comments</a> {{comments.length}}</span>
+  			<hr>
+  		</div>
+  	</div>
 </template>
