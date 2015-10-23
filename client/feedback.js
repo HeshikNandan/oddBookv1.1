@@ -13,12 +13,24 @@ Template.feedback.events({
 			'poster': "hehehe",
 			'createdAt': new Date()
 		});
+		$("#content").val("");
 	}
 });
 
 Template.feedback.helpers({
 	feedbacks: function() {
 		return Feedback.find();
+	}
+});
+
+Template.feedback.events({
+	"click #likes": function (event) {
+		event.preventDefault();
+		Feedback.update({'_id': this._id}, {'$push': {'likes': 'abc'}});
+	},
+	"click #unlikes": function (event) {
+		event.preventDefault();
+		Feedback.update({'_id': this._id}, {'$push': {'unlikes': 'abc'}});
 	}
 });
 
