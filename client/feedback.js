@@ -16,3 +16,9 @@ Template.feedback.events({
 	}
 });
 
+Template.feedback.helpers({
+	feedbacks: function() {
+		return Feedback.find();
+	}
+});
+

@@ -9,4 +9,18 @@
 	  	</div>
   		<button type="submit" id="submit-feedback" class="btn btn-default">Submit</button>
 	</form>
+
+	<ul style="margin:40px">
+		{{#each feedbacks}}
+		  	<div style="margin: 10px">
+		  		<h2>{{content}}</h2>
+		  		<div>
+		  			<span>posted by {{poster}}</span>
+		  			<span><a href="#" style="color: blue">likes</a> {{likes.length}}</span>
+		  			<span><a href="#" style="color: blue">unlikes</a> {{unlikes.length}}</span>
+		  			<span><a href="#" style="color: blue">comments</a> {{comments.length}}</span>
+		  		</div>
+		  	</div>
+		{{/each}}
+	</ul>
 </template>
