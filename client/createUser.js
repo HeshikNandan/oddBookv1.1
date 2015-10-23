@@ -1,7 +1,4 @@
 
-if (Meteor.isClient) {
-
-
   //Set value to the select option
 Template.createUser.helpers({
   team: function(){
@@ -16,30 +13,27 @@ Template.createUser.events({
       var email = $("#email").val();
       var occupation = $("#occupation").val();
       var birthday = $("#birthday").val();
+      var joinedIn = $("#joinedin").val();
       var name = $("#name").val();
       var location = $("#location").val();
-      var relationshipstatus = $("#relationshipstatus").val();
-      var status = $("#status").val();
       var hobbies = $("#hobbies").val();
-      var boss = $("#techid option:selected").attr("value");
-        console.log("Creating User : " + email);
+      var team = $("#teamid option:selected").attr("value");
+      console.log("Creating User : " + email);
       // Insert a task into the collection
       User.insert({
         email: email,
         occupation: occupation,
         birthday: birthday,
         name: name,
+        joinedIn:joinedIn,
         location: location,
-        relationshipstatus: relationshipstatus,
-        status: status,
         hobbies: hobbies,
-        boss: boss,
+        team: team,
         createdAt: new Date() // current time
       });
-  //
+      
+      //Router.go("org_chart");
       // Clear form
-      //event.target.text.value = "";
+      event.target.text.value = "";
     }
   });
-
-}
