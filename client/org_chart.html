@@ -1,4 +1,19 @@
 <template name="orgChart">
-  <h2>Chart</h2>
-  <div id="chart" width="100%"></div>
+  <div class="container" id="org-chart">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>Organization</h1>
+      </div>
+    </div>
+    {{> teamChart}}
+  </div>
+</template>
+
+<template name="teamChart">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Sales Team</h2>
+      <div id="chart"></div>
+    </div>
+  </div>
 </template>

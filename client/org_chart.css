@@ -1,0 +1,29 @@
+#org-chart h1 {
+	text-align: center;
+}
+
+/*.odchart {
+	color: green;
+	width: 60px;
+	border: 1px solid #fff;
+	text-align: center;
+}
+
+.google-visualization-orgchart-lineleft {
+	border-left: 2px solid #333!important;
+}
+.google-visualization-orgchart-linebottom {
+	border-bottom: 2px solid #333!important;
+}
+.google-visualization-orgchart-lineright {
+	border-right: 2px solid #333!important;
+}
+.odchart img {
+	clear: both;
+	display: block;
+	margin: auto;
+}
+
+#chart .google-visualization-orgchart-linenode {
+  border: none;
+}*/

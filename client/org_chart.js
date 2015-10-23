@@ -22,7 +22,7 @@ Template.orgChart.onRendered( function() {
   //
   // drawChart(chart);
   $.getScript('https://www.google.com/jsapi', function(){
-    console.log('loaded');
+    console.log('Google API loaded');
     google.load('visualization', '1.1', {'packages':['orgchart'], callback: drawChart});
 
     function drawChart() {
@@ -32,17 +32,22 @@ Template.orgChart.onRendered( function() {
       data.addColumn('string', 'ToolTip');
 
       data.addRows([
-        [{v:'Mike', f:'Mike<div style="color:red; font-style:italic">President</div>'}, '', 'The President'],
-        [{v:'Jim', f:'Jim<div style="color:red; font-style:italic">Vice President</div>'}, 'Mike', 'VP'],
-        ['Alice', 'Mike', ''],
-        ['Bob', 'Jim', 'Bob Sponge'],
-        ['Carol', 'Bob', '']
+        [{v:'Alan', f:'Alan<div style="color:red; font-style:italic">Global Lead</div>'}, '', 'Global Lead'],
+        [{v:'Almeric', f:'Almeric<div style="color:red; font-style:italic">Country Lead (SG)</div>'}, 'Alan', 'Country Lead (SG)'],
+        ['Arvin', 'Almeric', 'Sales'],
+        ['Laura', 'Almeric', 'Sales'],
+        ['Shee Mun', 'Almeric', 'Sales']
       ]);
-      console.log(data);
+
       var chart = new google.visualization.OrgChart(document.getElementById('chart'));
-      chart.draw(data, {allowHtml:true});
+      chart.draw(data, {allowHtml:true, size: "large", nodeClass:'odchart-user', selectedNodeClass: 'selected-odchart-user'});
     }
   });
-
-
 });
+
+Template.orgChart.events({
+  "click .odchart-user": function (event, template) {
+    var name = $(event.target).attr('title');
+    console.log(name);
+  }
+})
