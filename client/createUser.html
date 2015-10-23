@@ -1,0 +1,42 @@
+<template name="createUser">
+  <div class="container">
+    <div class="inner-content">
+      <form class="user">
+        <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="text" id="email" class="form-control" name="email" placeholder="Whats your Email?" /><br>
+        </div>
+        <div class="form-group">
+        <label for="exampleInputEmail1">Role in Company</label>
+        <input type="text" id="occupation" class="form-control" name="occupation" placeholder="What do you do?" /><br>
+        </div>
+        <div class="form-group">
+        <label for="exampleInputEmail1">Date of Birth</label>
+        <input type="date" id="birthday" class="form-control" name="birthday" placeholder="Whats your Birthdate?" /><br>
+        </div>
+        <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" id="name" name="name" class="form-control" placeholder="Whats your Name?" /><br>
+        </div>
+        <div class="form-group">
+        <label for="exampleInputEmail1">Location</label>
+          <input type="text" id="location" class="form-control" name="location" placeholder="Where do you live?" /><br>
+        </div>
+        <div class="form-group">
+        <label for="exampleInputEmail1">Hobbies</label>
+      <input type="text" id="hobbies" name="hobbies" class="form-control" placeholder="What do you like to do other than Oddling?" /><br>
+        </div>
+        <div class="form-group">
+        <label for="exampleInputEmail1">Hobbies</label>
+          <select class="form-control" name="techid" id="techid" >
+            {{#each team}}
+              <option value="{{email}}">{{name}}</option>
+              {{/each}}
+          </select>
+        </div>
+            <!--{{> quickForm id="types1" schema=typesSchema1}}-->
+            <button type="button" class="submit-user">Submit</button>
+          </form>
+        </div>
+      </div>
+</template>

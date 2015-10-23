@@ -1,38 +1,12 @@
-<template name="home">
-  <h1>Welcome to OddBook!</h1> {{> loginButtons}}
-  <div class="show-user">
-      {{> showUser}}
-  </div>
-  {{> createUser}}
-  {{> users}}
-</template>
 
-<template name="showUser">
-  <button>Test</button>
+<template name="home">
+
 </template>
-<template name="createUser">
-  <form class="user">
-        <input type="text" id="email" name="email" placeholder="Whats your Email?" /><br>
-        <input type="text" id="occupation" name="occupation" placeholder="What do you do?" /><br>
-        <input type="date" id="birthday" name="birthday" placeholder="Whats your Birthdate?" /><br>
-        <input type="text" id="name" name="name" placeholder="Whats your Name?" /><br>
-        <input type="text" id="location" name="location" placeholder="Where do you live?" /><br>
-        <input type="text" id="status" name="status" placeholder="What are you doing now?" /><br>
-        <input type="text" id="hobbies" name="hobbies" placeholder="What do you like to do other than Oddling?" /><br>
-        <select name="techid" id="techid" >
-          {{#each team}}
-            <option value="{{email}}">{{name}}</option>
-            {{/each}}
-        </select>
-        <!--{{> quickForm id="types1" schema=typesSchema1}}-->
-        <button type="button" class="submit-user">Submit</button>
-      </form>
+<template name="loginPage">
+  <h1>Welcome to OddBook!</h1>
+    {{> createNewUser}}
+  {{> loginButtons}}
 </template>
-<template name="users">
-  <ol>
-      {{#each user}}
-      <span>{{email}}</span><br>
-      <span>{{birthday}}</span>
-      {{/each}}
-  </ol>
+<template name="createNewUser">
+  <button>Create New User</button>
 </template>
