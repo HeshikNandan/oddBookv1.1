@@ -1,7 +1,7 @@
 User = new Mongo.Collection("user");
 RaiseEvent = new Mongo.Collection("raise_event");
 EventAttenders = new Mongo.Collection("event_Attenders");
-Activity = new Mongo.Collection("activity");
+Achievements = new Mongo.Collection("achievements");
 Comments = new Mongo.Collection("comments");
 Chat = new Mongo.Collection("chat");
 
