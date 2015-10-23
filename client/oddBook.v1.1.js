@@ -7,12 +7,12 @@ Chat = new Mongo.Collection("chat");
 
 if (Meteor.isClient) {
 
-  Template.showUser.helpers({
-      user: {
-        name:
-      }
-
-  });
+  // Template.showUser.helpers({
+  //     user: {
+  //       name:
+  //     }
+  //
+  // });
 
   //Set value to the select option
   Template.createUser.helpers({
@@ -53,9 +53,4 @@ if (Meteor.isClient) {
         //event.target.text.value = "";
       }
     });
-}
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
 }
