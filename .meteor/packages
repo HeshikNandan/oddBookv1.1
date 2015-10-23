@@ -25,3 +25,4 @@ aldeed:autoform-bs-datepicker
 accounts-google
 service-configuration
 accounts-ui
+iron:router

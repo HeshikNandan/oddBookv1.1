@@ -1,0 +1,5 @@
+db.team.insert({"name":"Sales"});
+db.team.insert({"name":"Tech"});
+db.team.insert({"name":"Customer Success"});
+db.team.insert({"name":"Business Development"});
+db.team.insert({"name":"Feastbump"});

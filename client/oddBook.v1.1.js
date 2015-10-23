@@ -1,23 +1,17 @@
-User = new Mongo.Collection("user");
-RaiseEvent = new Mongo.Collection("raise_event");
-EventAttenders = new Mongo.Collection("event_Attenders");
-Activity = new Mongo.Collection("activity");
-Comments = new Mongo.Collection("comments");
-Chat = new Mongo.Collection("chat");
+
 
 if (Meteor.isClient) {
 
-  Template.showUser.helpers({
-      user: {
-        name:
+  Template.showUser.events({
+      "click button" : function(){
+          Router.go("/test");
       }
-
   });
 
   //Set value to the select option
   Template.createUser.helpers({
     user: function(){
-      return User.find();
+      return Team.find();
     }
   });
   Template.body.events({
@@ -34,7 +28,7 @@ if (Meteor.isClient) {
         var relationshipstatus = $("#relationshipstatus").val();
         var status = $("#status").val();
         var hobbies = $("#hobbies").val();
-        var boss = $("#bossid option:selected").attr("value");
+        var boss = $("#techid option:selected").attr("value");
         // Insert a task into the collection
         User.insert({
           email: email,

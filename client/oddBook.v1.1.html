@@ -11,20 +11,19 @@
   {{> users}}
 </body>
 <template name="showUser">
-
+  <button>Test</button>
 </template>
 <template name="createUser">
   <form class="user">
-        <input type="text" id="email" name="email" placeholder="Whats your Email?" />
-        <input type="text" id="occupation" name="occupation" placeholder="What do you do?" />
-        <input type="date" id="birthday" name="birthday" placeholder="Whats your Birthdate?" />
-        <input type="text" id="name" name="name" placeholder="Whats your Name?" />
-        <input type="text" id="location" name="location" placeholder="Where do you live?" />
-        <input type="text" id="relationshipstatus" name="relationshipstatus" placeholder="Are you Single?" />
-        <input type="text" id="status" name="status" placeholder="What are you doing now?" />
-        <input type="text" id="hobbies" name="hobbies" placeholder="What do you like to do other than Oddling?" />
-        <select name="bossid" id="bossid" >
-          {{#each user}}
+        <input type="text" id="email" name="email" placeholder="Whats your Email?" /><br>
+        <input type="text" id="occupation" name="occupation" placeholder="What do you do?" /><br>
+        <input type="date" id="birthday" name="birthday" placeholder="Whats your Birthdate?" /><br>
+        <input type="text" id="name" name="name" placeholder="Whats your Name?" /><br>
+        <input type="text" id="location" name="location" placeholder="Where do you live?" /><br>
+        <input type="text" id="status" name="status" placeholder="What are you doing now?" /><br>
+        <input type="text" id="hobbies" name="hobbies" placeholder="What do you like to do other than Oddling?" /><br>
+        <select name="techid" id="techid" >
+          {{#each team}}
             <option value="{{email}}">{{name}}</option>
             {{/each}}
         </select>
